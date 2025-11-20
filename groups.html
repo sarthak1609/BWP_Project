@@ -1,144 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StudyBuddy · Join Groups</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { inter: ['Inter', 'sans-serif'] },
-          colors: {
-            brandIndigo: '#6366f1',
-            brandFuchsia: '#d946ef',
-            brandBlue: '#0ea5e9',
-            brandEmerald: '#34d399'
-          },
-          boxShadow: {
-            glow: '0 35px 60px rgba(99, 102, 241, 0.25)',
-            glass: '0 12px 40px rgba(15, 23, 42, 0.25)'
-          }
-        }
-      }
-    };
-  </script>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at 20% 20%, rgba(129, 140, 248, 0.08), transparent 35%),
-        radial-gradient(circle at 80% 0%, rgba(244, 114, 182, 0.12), transparent 45%),
-        #f5f6fb;
-      color: #0f172a;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyBuddy · Join Groups</title>
+    
+    <!-- Standard Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 </head>
+<body class="bg-white text-slate-900 antialiased" data-page="groups">
 
-<body class="min-h-screen text-slate-900" data-page="groups">
-  <div class="absolute inset-0 -z-10 overflow-hidden">
-    <div class="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-indigo-500/30 via-fuchsia-500/20 to-transparent blur-[140px]"></div>
-    <div class="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-gradient-to-tr from-emerald-400 via-cyan-400 to-blue-500 opacity-30 blur-3xl"></div>
-  </div>
-  <div class="relative z-10 flex min-h-screen flex-col lg:flex-row">
-    <aside class="hidden border-r border-white/20 bg-white/40 backdrop-blur-2xl lg:flex lg:w-72 lg:flex-col">
-      <div class="flex h-full flex-col justify-between p-8">
-        <div>
-          <div class="flex items-center gap-3 rounded-3xl border border-white/40 bg-white/70 p-4 shadow-glass">
-            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-cyan-400 text-xl font-bold text-white">SB</div>
+<div class="min-h-screen flex flex-col md:flex-row">
+
+    <!-- Sidebar -->
+    <aside class="w-full md:w-64 bg-white border-r border-slate-200 flex-shrink-0">
+        <div class="p-6 h-full flex flex-col justify-between">
             <div>
-              <p class="text-base font-semibold text-slate-900">StudyBuddy</p>
-              <p class="text-xs text-slate-500">Connected campuses</p>
+                <!-- Brand -->
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="h-10 w-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold">SB</div>
+                    <div>
+                        <h1 class="font-bold text-lg">StudyBuddy</h1>
+                        <p class="text-xs text-slate-500">Connected campuses</p>
+                    </div>
+                </div>
+
+                <!-- Nav -->
+                <nav class="space-y-1">
+                    <a href="dashboard.html" data-nav="dashboard" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50 hover:text-indigo-600 transition">Dashboard</a>
+                    <a href="my-groups.html" data-nav="my-groups" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50 hover:text-indigo-600 transition">My Groups</a>
+                    <a href="groups.html" data-nav="groups" class="block px-3 py-2 rounded-md bg-indigo-50 text-indigo-700 font-medium">Join Groups</a>
+                    <a href="create-group.html" data-nav="create-group" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50 hover:text-indigo-600 transition">Create Group</a>
+                    <a href="profile.html" data-nav="profile" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50 hover:text-indigo-600 transition">Profile</a>
+                </nav>
             </div>
-          </div>
-          <nav class="mt-10 flex flex-col gap-2 text-sm font-semibold text-slate-500">
-            <a href="dashboard.html" data-nav="dashboard" class="nav-pill flex items-center gap-3 rounded-2xl px-4 py-3 hover:bg-white/80 hover:text-slate-900">
-              <span class="h-2 w-2 rounded-full bg-indigo-500/60 shadow-glow"></span>
-              Dashboard
-            </a>
-            <a href="my-groups.html" data-nav="my-groups" class="nav-pill flex items-center gap-3 rounded-2xl px-4 py-3 hover:bg-white/80 hover:text-slate-900">
-              <span class="h-2 w-2 rounded-full bg-fuchsia-500/60"></span>
-              My Groups
-            </a>
-            <a href="groups.html" data-nav="groups" class="nav-pill flex items-center gap-3 rounded-2xl px-4 py-3 text-slate-900 bg-white">
-              <span class="h-2 w-2 rounded-full bg-cyan-400/60"></span>
-              Join Groups
-            </a>
-            <a href="create-group.html" data-nav="create-group" class="nav-pill flex items-center gap-3 rounded-2xl px-4 py-3 hover:bg-white/80 hover:text-slate-900">
-              <span class="h-2 w-2 rounded-full bg-emerald-400/60"></span>
-              Create Group
-            </a>
-            <a href="profile.html" data-nav="profile" class="nav-pill flex items-center gap-3 rounded-2xl px-4 py-3 hover:bg-white/80 hover:text-slate-900">
-              <span class="h-2 w-2 rounded-full bg-indigo-300/60"></span>
-              Profile
-            </a>
-            <a href="edit-profile.html" data-nav="edit-profile" class="nav-pill flex items-center gap-3 rounded-2xl px-4 py-3 hover:bg-white/80 hover:text-slate-900">
-              <span class="h-2 w-2 rounded-full bg-rose-300/60"></span>
-              Edit Profile
-            </a>
-          </nav>
+
+            <button id="signOutButton" class="mt-6 w-full text-left px-3 py-2 text-sm text-slate-500 hover:text-slate-800 transition">
+                Sign out
+            </button>
         </div>
-        <button id="signOutButton" class="rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">Sign out</button>
-      </div>
     </aside>
-    <main class="flex-1 px-4 py-6 sm:px-8 sm:py-10">
-      <div class="lg:hidden mb-6 rounded-3xl border border-white/50 bg-white/80 p-4 shadow-glass backdrop-blur-xl">
-        <div class="flex flex-wrap gap-3">
-          <a href="dashboard.html" class="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-600">Dashboard</a>
-          <a href="my-groups.html" class="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-600">My Groups</a>
-          <a href="groups.html" class="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white">Join Groups</a>
-          <a href="create-group.html" class="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-600">Create</a>
-          <a href="profile.html" class="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-600">Profile</a>
-          <button id="signOutButtonMobile" class="rounded-full bg-gradient-to-r from-rose-500 to-orange-400 px-4 py-2 text-sm font-semibold text-white">Sign out</button>
-        </div>
-      </div>
-      <header class="mb-8">
-        <p class="text-sm uppercase tracking-[0.4em] text-slate-400">Discover</p>
-        <h1 class="mt-2 text-3xl font-semibold text-slate-900">Join inspiring student collectives</h1>
-        <p class="mt-2 text-sm text-slate-500">Search, filter, and hop into real teams working on real projects.</p>
-      </header>
-      <section class="rounded-[32px] border border-white/50 bg-white/80 p-6 shadow-glass backdrop-blur-xl">
-        <div class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-          <div class="space-y-4">
-            <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-              <div class="flex-1 rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 shadow-inner">
-                <input id="groupSearchInput" type="search" placeholder="Search by name, tags, or branch" class="w-full bg-transparent text-sm text-slate-700 focus:outline-none" />
-              </div>
-              <div class="flex flex-wrap gap-3 text-xs">
-                <button class="filter-chip rounded-full bg-indigo-50 px-4 py-2 font-semibold text-indigo-600" data-filter="ai/ml">AI/ML</button>
-                <button class="filter-chip rounded-full bg-fuchsia-50 px-4 py-2 font-semibold text-fuchsia-600" data-filter="robotics">Robotics</button>
-                <button class="filter-chip rounded-full bg-cyan-50 px-4 py-2 font-semibold text-cyan-600" data-filter="design">Design</button>
-                <button class="filter-chip rounded-full bg-emerald-50 px-4 py-2 font-semibold text-emerald-600" data-filter="finance">Finance</button>
-              </div>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 md:p-12">
+        <header class="mb-8">
+            <h2 class="text-2xl font-bold text-slate-900">Discover Groups</h2>
+            <p class="text-slate-600 mt-1">Find a team and start building.</p>
+        </header>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <!-- Left: Search & Results -->
+            <div class="flex-1">
+                <!-- Search & Filters -->
+                <div class="mb-6 space-y-4">
+                    <input type="search" id="groupSearchInput" 
+                        placeholder="Search by name, tags, or branch..." 
+                        class="w-full rounded-lg border-slate-300 focus:border-indigo-500 focus:ring-indigo-500">
+                    
+                    <div class="flex flex-wrap gap-2">
+                        <button class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-full text-sm font-medium transition" data-filter="all">All</button>
+                        <button class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-full text-sm font-medium transition" data-filter="ai/ml">AI/ML</button>
+                        <button class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-full text-sm font-medium transition" data-filter="robotics">Robotics</button>
+                        <button class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-full text-sm font-medium transition" data-filter="design">Design</button>
+                    </div>
+                </div>
+
+                <!-- Results Container -->
+                <div id="groupResults" class="space-y-4">
+                    <!-- JS populates this -->
+                    <div class="text-center py-10 text-slate-500">Loading groups...</div>
+                </div>
             </div>
-            <div id="groupResults" class="space-y-4"></div>
-          </div>
-          <div class="rounded-3xl border border-white/40 bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-sky-400 p-6 text-white shadow-glow">
-            <div class="flex items-center gap-4">
-              <div class="rounded-2xl bg-white/20 p-3">
-                <span class="text-3xl">⚡</span>
-              </div>
-              <div>
-                <p class="text-sm uppercase tracking-[0.4em] text-white/80">Tip</p>
-                <h3 class="text-2xl font-semibold">Start your own lab</h3>
-              </div>
+
+            <!-- Right: CTA -->
+            <div class="w-full lg:w-80 flex-shrink-0">
+                <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-6">
+                    <h3 class="font-bold text-indigo-900 mb-2">Start your own lab</h3>
+                    <p class="text-sm text-indigo-700 mb-4 leading-relaxed">Can't find what you're looking for? Create a new group in seconds and get featured.</p>
+                    <a href="create-group.html" class="block w-full text-center px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition">
+                        Create Group
+                    </a>
+                </div>
             </div>
-            <p class="mt-4 text-white/80">Can’t find a perfect match? Spin up a new group and get featured within minutes.</p>
-            <a href="create-group.html" class="mt-6 inline-flex items-center gap-2 rounded-2xl bg-white/20 px-4 py-2 text-sm font-semibold backdrop-blur transition hover:bg-white/30">
-              Launch a new group →
-            </a>
-          </div>
+
         </div>
-      </section>
     </main>
-  </div>
 
-  <script type="module" src="./js/groups.js"></script>
+</div>
+
+<!-- Logic -->
+<script type="module" src="./js/groups.js"></script>
+
 </body>
-
 </html>
-

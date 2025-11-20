@@ -1,138 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StudyBuddy · Edit Profile</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { inter: ['Inter', 'sans-serif'] },
-          colors: {
-            brandIndigo: '#6366f1',
-            brandFuchsia: '#d946ef',
-            brandBlue: '#0ea5e9',
-            brandEmerald: '#34d399'
-          },
-          boxShadow: {
-            glow: '0 35px 60px rgba(99, 102, 241, 0.25)',
-            glass: '0 12px 40px rgba(15, 23, 42, 0.25)'
-          }
-        }
-      }
-    };
-  </script>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at 20% 20%, rgba(129, 140, 248, 0.08), transparent 35%),
-        radial-gradient(circle at 80% 0%, rgba(244, 114, 182, 0.12), transparent 45%),
-        #f5f6fb;
-      color: #0f172a;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyBuddy · Edit Profile</title>
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 </head>
+<body class="bg-white text-slate-900 antialiased" data-page="edit-profile">
 
-<body class="min-h-screen text-slate-900" data-page="edit-profile">
-  <div class="absolute inset-0 -z-10 overflow-hidden">
-    <div class="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-indigo-500/30 via-fuchsia-500/20 to-transparent blur-[140px]"></div>
-    <div class="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-gradient-to-tr from-emerald-400 via-cyan-400 to-blue-500 opacity-30 blur-3xl"></div>
-  </div>
-  <div class="relative z-10 flex min-h-screen flex-col lg:flex-row">
-    <aside class="hidden border-r border-white/20 bg-white/40 backdrop-blur-2xl lg:flex lg:w-72 lg:flex-col">
-      <div class="flex h-full flex-col justify-between p-8">
-        <div>
-          <div class="flex items-center gap-3 rounded-3xl border border-white/40 bg-white/70 p-4 shadow-glass">
-            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-cyan-400 text-xl font-bold text-white">SB</div>
+<div class="min-h-screen flex flex-col md:flex-row">
+
+    <!-- Sidebar -->
+    <aside class="w-full md:w-64 bg-white border-r border-slate-200 flex-shrink-0">
+        <div class="p-6 h-full flex flex-col justify-between">
             <div>
-              <p class="text-base font-semibold text-slate-900">StudyBuddy</p>
-              <p class="text-xs text-slate-500">Connected campuses</p>
+                <!-- Brand -->
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="h-10 w-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold">SB</div>
+                    <div>
+                        <h1 class="font-bold text-lg">StudyBuddy</h1>
+                        <p class="text-xs text-slate-500">Connected campuses</p>
+                    </div>
+                </div>
+
+                <!-- Nav Links -->
+                <nav class="space-y-1">
+                    <a href="dashboard.html" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50 hover:text-indigo-600 transition">Dashboard</a>
+                    <a href="my-groups.html" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50 hover:text-indigo-600 transition">My Groups</a>
+                    <a href="groups.html" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50 hover:text-indigo-600 transition">Join Groups</a>
+                    <a href="create-group.html" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50 hover:text-indigo-600 transition">Create Group</a>
+                    <a href="profile.html" class="block px-3 py-2 rounded-md text-slate-600 hover:bg-slate-50 hover:text-indigo-600 transition">Profile</a>
+                    <a href="edit-profile.html" class="block px-3 py-2 rounded-md bg-indigo-50 text-indigo-700 font-medium">Edit Profile</a>
+                </nav>
             </div>
-          </div>
-          <nav class="mt-10 flex flex-col gap-2 text-sm font-semibold text-slate-500">
-            <a href="dashboard.html" data-nav="dashboard" class="nav-pill flex items-center gap-3 rounded-2xl px-4 py-3 hover:bg-white/80 hover:text-slate-900">
-              <span class="h-2 w-2 rounded-full bg-indigo-500/60 shadow-glow"></span>
-              Dashboard
-            </a>
-            <a href="my-groups.html" data-nav="my-groups" class="nav-pill flex items-center gap-3 rounded-2xl px-4 py-3 hover:bg-white/80 hover:text-slate-900">
-              <span class="h-2 w-2 rounded-full bg-fuchsia-500/60"></span>
-              My Groups
-            </a>
-            <a href="groups.html" data-nav="groups" class="nav-pill flex items-center gap-3 rounded-2xl px-4 py-3 hover:bg-white/80 hover:text-slate-900">
-              <span class="h-2 w-2 rounded-full bg-cyan-400/60"></span>
-              Join Groups
-            </a>
-            <a href="create-group.html" data-nav="create-group" class="nav-pill flex items-center gap-3 rounded-2xl px-4 py-3 hover:bg-white/80 hover:text-slate-900">
-              <span class="h-2 w-2 rounded-full bg-emerald-400/60"></span>
-              Create Group
-            </a>
-            <a href="profile.html" data-nav="profile" class="nav-pill flex items-center gap-3 rounded-2xl px-4 py-3 hover:bg-white/80 hover:text-slate-900">
-              <span class="h-2 w-2 rounded-full bg-indigo-300/60"></span>
-              Profile
-            </a>
-            <a href="edit-profile.html" data-nav="edit-profile" class="nav-pill flex items-center gap-3 rounded-2xl px-4 py-3 bg-white text-slate-900">
-              <span class="h-2 w-2 rounded-full bg-rose-300/60"></span>
-              Edit Profile
-            </a>
-          </nav>
+
+            <button id="signOutButton" class="mt-6 w-full text-left px-3 py-2 text-sm text-slate-500 hover:text-slate-800 transition">
+                Sign out
+            </button>
         </div>
-        <button id="signOutButton" class="rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">Sign out</button>
-      </div>
     </aside>
-    <main class="flex-1 px-4 py-6 sm:px-8 sm:py-10">
-      <div class="lg:hidden mb-6 rounded-3xl border border-white/50 bg-white/80 p-4 shadow-glass backdrop-blur-xl">
-        <div class="flex flex-wrap gap-3">
-          <a href="dashboard.html" class="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-600">Dashboard</a>
-          <a href="my-groups.html" class="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-600">My Groups</a>
-          <a href="groups.html" class="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-600">Join</a>
-          <a href="create-group.html" class="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-600">Create</a>
-          <a href="profile.html" class="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-600">Profile</a>
-          <a href="edit-profile.html" class="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white">Edit</a>
-          <button id="signOutButtonMobile" class="rounded-full bg-gradient-to-r from-rose-500 to-orange-400 px-4 py-2 text-sm font-semibold text-white">Sign out</button>
-        </div>
-      </div>
-      <header class="mb-8">
-        <p class="text-sm uppercase tracking-[0.4em] text-slate-400">Profile</p>
-        <h1 class="mt-2 text-3xl font-semibold text-slate-900">Refresh your details</h1>
-        <p class="mt-2 text-sm text-slate-500">Update your name, avatar, and interest stack.</p>
-      </header>
-      <section class="rounded-[32px] border border-white/50 bg-white/80 p-6 shadow-glass backdrop-blur-xl">
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 md:p-12 max-w-3xl">
+        <header class="mb-8">
+            <h2 class="text-2xl font-bold text-slate-900">Edit Profile</h2>
+            <p class="text-slate-600 mt-1">Update your personal details and interests.</p>
+        </header>
+
         <form id="editProfileForm" class="space-y-6">
-          <div class="grid gap-6 lg:grid-cols-2">
-            <div>
-              <label class="text-sm font-medium text-slate-600">Full name</label>
-              <input type="text" name="name" required class="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200" />
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Name -->
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                    <input type="text" name="name" required 
+                        class="w-full rounded-lg border-slate-300 focus:border-indigo-500 focus:ring-indigo-500">
+                </div>
+
+                <!-- Photo -->
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Photo URL</label>
+                    <input type="url" name="photoURL" placeholder="https://..." 
+                        class="w-full rounded-lg border-slate-300 focus:border-indigo-500 focus:ring-indigo-500">
+                </div>
             </div>
+
+            <!-- Email (Read-only) -->
             <div>
-              <label class="text-sm font-medium text-slate-600">Photo URL</label>
-              <input type="url" name="photoURL" placeholder="https://…" class="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200" />
+                <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                <input type="email" name="email" readonly 
+                    class="w-full rounded-lg border-slate-200 bg-slate-50 text-slate-500 cursor-not-allowed">
             </div>
-          </div>
-          <div>
-            <label class="text-sm font-medium text-slate-600">Email (read-only)</label>
-            <input type="email" name="email" readonly class="mt-2 w-full rounded-2xl border border-slate-100 bg-slate-50 px-4 py-3 text-sm text-slate-500" />
-          </div>
-          <div>
-            <label class="text-sm font-medium text-slate-600">Interests</label>
-            <div id="editInterests" class="mt-3 flex flex-wrap gap-3 text-xs"></div>
-            <p class="mt-2 text-xs text-slate-400">Select up to 5 interests.</p>
-          </div>
-          <button type="submit" class="w-full rounded-2xl bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-emerald-400 px-5 py-3 text-sm font-semibold text-white shadow-glow hover:scale-[1.01] transition">
-            Save changes
-          </button>
+
+            <!-- Interests -->
+            <div>
+                <label class="block text-sm font-medium text-slate-700 mb-2">Interests</label>
+                <div id="editInterests" class="flex flex-wrap gap-2 mb-2 min-h-[40px]"></div>
+                <p class="text-xs text-slate-500">Select up to 5 interests.</p>
+            </div>
+
+            <!-- Actions -->
+            <div class="pt-2">
+                <button type="submit" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow-sm transition">
+                    Save Changes
+                </button>
+            </div>
+
         </form>
-      </section>
     </main>
-  </div>
 
-  <script type="module" src="./js/profile.js"></script>
+</div>
+
+<!-- Logic -->
+<script type="module" src="./js/profile.js"></script>
+
 </body>
-
 </html>
-
