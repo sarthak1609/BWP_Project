@@ -1,5 +1,6 @@
 import { db } from './firebase.js';
 import { requireAuth, formatTimestamp, showToast } from './utils.js';
+
 import {
   collection,
   collectionGroup,
@@ -135,6 +136,8 @@ const loadYourGroups = async () => {
         .join('')
     : '<p class="text-sm text-slate-500">You have no groups yet. Join one today.</p>';
 };
+
+
 
 const bootstrap = async () => {
   try {

@@ -4,13 +4,13 @@ import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.12.2/firebas
 
 // TODO: Replace every placeholder with your project keys from the Firebase console.
 const firebaseConfig = {
-  apiKey: 'YOUR_API_KEY',
-  authDomain: 'YOUR_PROJECT_ID.firebaseapp.com',
-  projectId: 'YOUR_PROJECT_ID',
-  storageBucket: 'YOUR_PROJECT_ID.appspot.com',
-  messagingSenderId: '000000000000',
-  appId: '1:000000000000:web:xxxxxxxxxxxxxxxxxxxx',
-};
+    apiKey: "AIzaSyA2dgBwntUckU5oUtFhbiwdbnRSt2Tl2fw",
+    authDomain: "studybuddy-3e4cf.firebaseapp.com",
+    projectId: "studybuddy-3e4cf",
+    storageBucket: "studybuddy-3e4cf.firebasestorage.app",
+    messagingSenderId: "447281269418",
+    appId: "1:447281269418:web:b6ab0023997792734cded3"
+  };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);

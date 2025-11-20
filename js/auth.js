@@ -74,7 +74,7 @@ const handleSignup = async (event) => {
   try {
     const { user } = await createUserWithEmailAndPassword(auth, email, password);
     await updateProfile(user, { displayName: name });
-    await setDoc(doc(db, 'users', user.uid), {
+     await setDoc(doc(db, 'users', user.uid), {
       name,
       email,
       photoURL: '',
@@ -82,7 +82,9 @@ const handleSignup = async (event) => {
       createdAt: serverTimestamp(),
     });
     showToast('Account created! Pick your interests next.', 'success');
-    window.location.href = 'onboarding.html';
+setTimeout(() => {
+      window.location.href = 'onboarding.html';
+    }, 300);
   } catch (error) {
     console.error(error);
     showToast(error.message || 'Could not create account', 'error');
