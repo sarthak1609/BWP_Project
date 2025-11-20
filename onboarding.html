@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyBuddy · Onboarding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter', 'sans-serif'] },
+          colors: {
+            glowIndigo: '#6366f1',
+            glowFuchsia: '#d946ef',
+            glowBlue: '#38bdf8',
+            glowEmerald: '#34d399'
+          },
+          boxShadow: {
+            glow: '0 25px 45px rgba(99, 102, 241, 0.35)'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, rgba(99, 102, 241, 0.08), transparent 45%),
+        radial-gradient(circle at 20% 20%, rgba(244, 114, 182, 0.08), transparent 40%),
+        #f8fafc;
+      color: #0f172a;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-slate-50" data-page="onboarding">
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <div class="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-indigo-500/30 via-fuchsia-500/20 to-transparent blur-[140px]"></div>
+  </div>
+  <main class="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-10 px-6 py-12">
+    <header class="flex flex-col gap-3 text-center">
+      <p class="text-sm uppercase tracking-[0.5em] text-slate-400">Onboarding</p>
+      <h1 class="text-4xl font-semibold text-slate-900">Tell us what excites you</h1>
+      <p class="text-slate-500">Pick up to five interests to personalize your StudyBuddy experience.</p>
+    </header>
+    <section class="rounded-[32px] border border-white/50 bg-white/80 p-8 shadow-2xl shadow-indigo-500/10 backdrop-blur-2xl">
+      <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+        <div>
+          <div class="flex items-center justify-between">
+            <h2 class="text-xl font-semibold text-slate-900">Popular interest tracks</h2>
+            <span class="rounded-full bg-indigo-50 px-4 py-1 text-sm font-medium text-indigo-600" id="selectedCount">0 / 5 selected</span>
+          </div>
+          <div id="interestGrid" class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+        </div>
+        <div class="rounded-3xl border border-slate-100 bg-white/70 p-6 shadow-glow">
+          <h3 class="text-lg font-semibold text-slate-900">Your vibe</h3>
+          <p class="mt-2 text-sm text-slate-500">Tap interests to add or remove them.</p>
+          <div id="selectedInterests" class="mt-4 flex flex-wrap gap-3">
+            <p class="text-sm text-slate-400">No interests yet...</p>
+          </div>
+          <button id="saveInterestsBtn" class="mt-8 w-full rounded-2xl bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-emerald-400 px-6 py-3 text-base font-semibold text-white shadow-glow transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60">
+            Save interests & continue
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./js/auth.js"></script>
+</body>
+
+</html>
+

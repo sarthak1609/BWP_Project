@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyBuddy · My Groups</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter', 'sans-serif'] },
+          colors: {
+            brandIndigo: '#6366f1',
+            brandFuchsia: '#d946ef',
+            brandBlue: '#0ea5e9',
+            brandEmerald: '#34d399'
+          },
+          boxShadow: {
+            glow: '0 35px 60px rgba(99, 102, 241, 0.25)',
+            glass: '0 12px 40px rgba(15, 23, 42, 0.25)'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at 20% 20%, rgba(129, 140, 248, 0.08), transparent 35%),
+        radial-gradient(circle at 80% 0%, rgba(244, 114, 182, 0.12), transparent 45%),
+        #f5f6fb;
+      color: #0f172a;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen text-slate-900" data-page="my-groups">
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <div class="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-indigo-500/30 via-fuchsia-500/20 to-transparent blur-[140px]"></div>
+    <div class="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-gradient-to-tr from-emerald-400 via-cyan-400 to-blue-500 opacity-30 blur-3xl"></div>
+  </div>
+  <div class="relative z-10 flex min-h-screen flex-col lg:flex-row">
+    <aside class="hidden border-r border-white/20 bg-white/40 backdrop-blur-2xl lg:flex lg:w-72 lg:flex-col">
+      <div class="flex h-full flex-col justify-between p-8">
+        <div>
+          <div class="flex items-center gap-3 rounded-3xl border border-white/40 bg-white/70 p-4 shadow-glass">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-cyan-400 text-xl font-bold text-white">SB</div>
+            <div>
+              <p class="text-base font-semibold text-slate-900">StudyBuddy</p>
+              <p class="text-xs text-slate-500">Connected campuses</p>
+            </div>
+          </div>
+          <nav class="mt-10 flex flex-col gap-2 text-sm font-semibold text-slate-500">
+            <a href="dashboard.html" data-nav="dashboard" class="nav-pill flex items-center gap-3 rounded-2xl px-4 py-3 hover:bg-white/80 hover:text-slate-900">
+              <span class="h-2 w-2 rounded-full bg-indigo-500/60 shadow-glow"></span>
+              Dashboard
+            </a>
+            <a href="my-groups.html" data-nav="my-groups" class="nav-pill flex items-center gap-3 rounded-2xl px-4 py-3 bg-white text-slate-900">
+              <span class="h-2 w-2 rounded-full bg-fuchsia-500/60"></span>
+              My Groups
+            </a>
+            <a href="groups.html" data-nav="groups" class="nav-pill flex items-center gap-3 rounded-2xl px-4 py-3 hover:bg-white/80 hover:text-slate-900">
+              <span class="h-2 w-2 rounded-full bg-cyan-400/60"></span>
+              Join Groups
+            </a>
+            <a href="create-group.html" data-nav="create-group" class="nav-pill flex items-center gap-3 rounded-2xl px-4 py-3 hover:bg-white/80 hover:text-slate-900">
+              <span class="h-2 w-2 rounded-full bg-emerald-400/60"></span>
+              Create Group
+            </a>
+            <a href="profile.html" data-nav="profile" class="nav-pill flex items-center gap-3 rounded-2xl px-4 py-3 hover:bg-white/80 hover:text-slate-900">
+              <span class="h-2 w-2 rounded-full bg-indigo-300/60"></span>
+              Profile
+            </a>
+            <a href="edit-profile.html" data-nav="edit-profile" class="nav-pill flex items-center gap-3 rounded-2xl px-4 py-3 hover:bg-white/80 hover:text-slate-900">
+              <span class="h-2 w-2 rounded-full bg-rose-300/60"></span>
+              Edit Profile
+            </a>
+          </nav>
+        </div>
+        <button id="signOutButton" class="rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">Sign out</button>
+      </div>
+    </aside>
+    <main class="flex-1 px-4 py-6 sm:px-8 sm:py-10">
+      <div class="lg:hidden mb-6 rounded-3xl border border-white/50 bg-white/80 p-4 shadow-glass backdrop-blur-xl">
+        <div class="flex flex-wrap gap-3">
+          <a href="dashboard.html" class="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-600">Dashboard</a>
+          <a href="my-groups.html" class="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white">My Groups</a>
+          <a href="groups.html" class="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-600">Join</a>
+          <a href="create-group.html" class="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-600">Create</a>
+          <a href="profile.html" class="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-600">Profile</a>
+          <button id="signOutButtonMobile" class="rounded-full bg-gradient-to-r from-rose-500 to-orange-400 px-4 py-2 text-sm font-semibold text-white">Sign out</button>
+        </div>
+      </div>
+      <header class="mb-8">
+        <p class="text-sm uppercase tracking-[0.4em] text-slate-400">Spaces</p>
+        <h1 class="mt-2 text-3xl font-semibold text-slate-900">Your groups & labs</h1>
+        <p class="mt-2 text-sm text-slate-500">Manage memberships, stay updated, jump back in with one tap.</p>
+      </header>
+      <section class="rounded-[32px] border border-white/50 bg-white/80 p-6 shadow-glass backdrop-blur-xl">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p class="text-sm font-semibold text-slate-600">Total groups</p>
+            <p class="text-2xl font-semibold text-slate-900" id="myGroupsCount">0</p>
+          </div>
+          <div class="flex flex-wrap gap-3 text-xs">
+            <button class="rounded-full border border-indigo-200 bg-indigo-50 px-4 py-2 font-semibold text-indigo-600" data-my-groups-filter="all">All</button>
+            <button class="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 font-semibold text-emerald-600" data-my-groups-filter="owner">Owned</button>
+            <button class="rounded-full border border-fuchsia-200 bg-fuchsia-50 px-4 py-2 font-semibold text-fuchsia-600" data-my-groups-filter="member">Member</button>
+          </div>
+        </div>
+        <div id="myGroupsList" class="mt-6 space-y-4"></div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./js/groups.js"></script>
+</body>
+
+</html>
+
